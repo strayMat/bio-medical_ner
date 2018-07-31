@@ -1,0 +1,113 @@
+<title>MedTag Corpora</title>
+
+<h1>MedTag Corpora</h1>
+
+<table border=1 cellpadding=10><tr><td valign=top>
+<center><font size=5>View corpora</font></center>
+<p>
+
+<table>
+<tr><td>
+<form method=post action=sum_corps.cgi>
+<input type=submit value="Summarize corps">
+</form>
+</td><td>
+<form method=post action=sum_lists.cgi>
+&nbsp;&nbsp;<input type=submit value="Summarize lists">
+</form>
+</td></tr></table>
+
+<form method=post action=list.cgi>
+Corpus: <input type=text name=corpus>&nbsp;&nbsp;<input type=submit value="List excerpts">
+</form>
+
+</td>
+
+</tr></tr>
+
+<td>
+
+<center><font size=5>Edit and view individual excerpts</font></center>
+<p>
+
+<form method=post action=edit_token.cgi>
+<br>Excerpt ID: <input type=text name=excerpt_id>&nbsp;&nbsp;<input type=submit value="Edit tokens">
+</form>
+
+<form method=post action=edit_phrase.cgi>
+<br>Excerpt ID: <input type=text name=excerpt_id>&nbsp;&nbsp;<input type=submit value="Edit phrases">
+</form>
+
+<form method=post action=print_token.cgi>
+<br>Excerpt ID: <input type=text name=excerpt_id>&nbsp;&nbsp;<input type=submit value="View tokens">
+</form>
+
+</td>
+
+</tr></tr>
+
+<td>
+
+<table>
+<tr><td>
+<form method=post action=search.cgi>
+<center><font size=5>Search for excerpts containing strings</font></center>
+<p>
+<table>
+<tr><td> String </td><td> <input type=text name=match> </td></tr>
+<tr><td> String before </td><td> <input type=text name=match_before> </td></tr>
+<tr><td> String after </td><td> <input type=text name=match_after> </td></tr>
+<tr><td> Token_Annotation </td><td> <input type=text name=match_annotation> </td></tr>
+<tr><td> Corpus  </td><td> <input type=text name=corpus> </td></tr>
+<tr><td> Save to list </td><td> <input type=text name=list_id> </td></tr>
+<tr><td> List comment </td><td> <input type=text name=comment> </td></tr>
+<tr><td> Match Case  </td><td> <input type=checkbox name=match_case value=1> </td></tr>
+<tr><td align=center><input type=submit value="View Context"> </td></tr>
+</table>
+</form>
+</td>
+
+<td valign=bottom>
+<font size=2>
+Fields may contain a percent character (%), which 
+matches zero or more arbitrary characters.
+A token and annotation may be entered
+in the Token_Annotation field
+separated by an undescore (_), and
+if an undescore is not present,
+any annotation will match.
+A subcorpus name may be entered in the Corpus field
+after a slash (/).
+If the Match Case box is checked, strings and tokens
+are matched with case sensitivity.
+
+<p>
+The token portion of the Token_Annotation field
+(only)
+may contain a full Unix regular expression:
+^ = beginning of token, $ = end of token, . = any character,
+[a-zA-Z0-9] (etc) = character class,
+[^a-zA-Z0-9] (etc) = negation of character class,
+* = zero or more repeats, and anything else you may know.
+To match a special character, you must use 2 backslashes (\\),
+or put it inside character class brackets.
+Single quotes appearing in an expression must be doubled.
+A dash in a character class must appear at the end,
+a right square bracket must appear at the beginning.
+Characters and character classes are case sensitive
+only if the Match Case box is checked.
+The annotation portion of this field is not case sensitive,
+and may only contain percent
+character (%) as a wildcard.
+
+<p>
+Enter a name in the Save to list field and the resulting list
+will be saved for navigation.
+</font>
+</td></tr></table>
+</td>
+
+</tr>
+
+</table>
+

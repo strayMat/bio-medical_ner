@@ -1,0 +1,4 @@
+# avoid archives
+*.zip
+
+.ipynb_checkpoints
