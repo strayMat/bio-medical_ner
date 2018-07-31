@@ -1,4 +1,4 @@
-# Functions to segment big conll files in sub-files
+# Conll files
 
 import re
 from collections import Counter
@@ -20,7 +20,7 @@ def line2sent(data):
     return(sent_data)
 
 def sent2line(sent_data):
-    ''' the inverse operation: write a  list of sentences as a list of token lines with \n at the end,
+    ''' The inverse operation: write a  list of sentences as a list of token lines with \n at the end,
     Separate the sentences by an empty line '\n'
     '''
     data2write = []
@@ -157,7 +157,7 @@ def rm_tokens(path2original_data, path2rm_data, entities2rm: list):
 
 
 def describe_entities(path2conll, iob = False, verbose = True):
-    ''' Describe a conll file entities (provide the numbers of each unique entity in the corpus)
+    ''' Describe conll file entities (provide the numbers of each unique entity in the corpus)
     '''
     
     with open(path2conll, 'r') as f:

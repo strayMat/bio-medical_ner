@@ -1,6 +1,6 @@
 
 def read_conf(path2conf_model, verbose = False):
-    '''read and write functions adapted to yaset conf files 
+    ''' Read function adapted to yaset conf files 
     python format is a dictionnary listing all parameters without any sections (!= yaset format)
     '''
     # read to list
@@ -20,6 +20,8 @@ def read_conf(path2conf_model, verbose = False):
     return conf_dict
 
 def write_conf(conf_dict, path2newconf, verbose = False):
+    ''' Write function adapted to yaset conf files 
+    '''
     new_conf = []
     for k,v in conf_dict.items():
         if k[0]=='[':
@@ -35,10 +37,11 @@ def write_conf(conf_dict, path2newconf, verbose = False):
 
 
 def change_conf(model_conf, input_dict):
-    '''input:
-        model_conf, a dictionnary containing all the parameters for a yaset conf file
-        input_dict, a dictionnray containing a subset of the yaset parameters to change
-   output: complete changed conf file         
+    ''' Change some inputs from a conf dictionnary
+        input:
+            model_conf, a dictionnary containing all the parameters for a yaset conf file
+            input_dict, a dictionnray containing a subset of the yaset parameters to change
+       output: complete changed conf file         
     '''
     # create a copy of the model_conf
     changed_conf = {}

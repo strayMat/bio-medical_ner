@@ -4,7 +4,7 @@ from sklearn.metrics import precision_recall_fscore_support
 # Conversion functions from conll to a spaCy friendly format for visualization
 
 def conll2sent_list(path2data, column = -1):
-    '''convert a conll formated text file to a list of 
+    ''' Convert a conll formated text file to a list of 
     - text sentences (one sentence =  one list of words)
     - a list of tags sentences (one sentences = one list of tags)
     parameters: 
@@ -32,7 +32,7 @@ def conll2sent_list(path2data, column = -1):
 
 
 def sent_list2spacy(texts_list, tags_list):
-    '''convert a list of text sentences and a list of tags sentences to the spaCy training format
+    ''' Convert a list of text sentences and a list of tags sentences to the spaCy training format
     '''
     spacy_data = []
     for text, tags in zip(texts_list, tags_list):
@@ -48,7 +48,7 @@ def sent_list2spacy(texts_list, tags_list):
 
 
 def train2myVisu(train_format):
-    '''Convert a training spaCy format to the manually viewable format of spaCy
+    ''' Convert a training spaCy format to the manually viewable format of spaCy
     '''
     res = {}
     res['text'] = train_format[0]

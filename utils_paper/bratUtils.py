@@ -11,7 +11,7 @@ from myDocClass import mlt_doc, ncbi_doc, entClass
 
 PUNCT = ['.']
 def spacy_doc2conll(spacy_doc, ann_dict, sent_sep = PUNCT, sent_sep_token='', sep_col = '\t'):
-    '''Conversion from spacy doc to conll with on etoken per line
+    ''' Conversion from spacy doc to conll with one token per line
         Input:  
             doc, spacy processed document (with sentences and tokens separation)
             ann_dict, a dictionnary containing unilabel entities {start_offset : entClass object}
@@ -53,7 +53,7 @@ def spacy_doc2conll(spacy_doc, ann_dict, sent_sep = PUNCT, sent_sep_token='', se
     return conll
 
 def lab_vec(ent_list, lab2lab_ix):
-    ''' from a list of multiple entities attached toi a given token and a dict labels2labels_ix, create a vector with ones only for entities attached to the current token
+    ''' from a list of multiple entities attached to a given token and a dict labels2labels_ix, create a vector with ones only for entities attached to the current token
     '''
     label_vec = np.zeros(len(lab2lab_ix))
     for ent in ent_list:
@@ -61,7 +61,7 @@ def lab_vec(ent_list, lab2lab_ix):
     return label_vec
 
 def myDoc2conll(doc, nlp_model, path2save = None, sent_sep_token='', sep_col = '\t'):
-    '''Conversion from brat to conll format
+    ''' Conversion from brat to conll format
         Input:  
             doc, name of the myDoc file (without extension)
             nlp_model, tokenizer, exclusively spacy language model for now (nlp = spacy.load('fr'))
@@ -88,7 +88,7 @@ def myDoc2conll(doc, nlp_model, path2save = None, sent_sep_token='', sep_col = '
 
 
 def myDoc_multi2conll(doc, nlp_model, path2save = None, sent_sep_token='', sep_col = '\t'):
-    '''Conversion from brat to conll format when brat has multi-annotation
+    ''' Conversion from brat to conll format when brat has multi-annotation
         Input:  
             doc, name of the myDoc file (without extension)
             nlp_model, tokenizer, exclusevley spacy language model for now (nlp = spacy.load('fr'))

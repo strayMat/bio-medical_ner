@@ -13,7 +13,7 @@ from confUtils import read_conf
 # Dataframe construction functions
 
 def get_results(path2xpDir):
-    ''' read a yaset result directory and collect all relevant informations in it
+    ''' Read a yaset result directory and collect all relevant informations in it
     input: result directory path
     output: dictionnary (thought as json format) returning all relevant informations about the experience
     '''
@@ -150,8 +150,10 @@ def build_jsons(path2xps, path2store, show_path = False):
     return 
 
 
-# convert boolean string to python boolean, needed in get_results
+
 def str2bool(st):
+    ''' Convert boolean string to python boolean, needed in get_results
+    '''
     if st == 'true':
         return True
     elif st == 'false':
@@ -161,7 +163,7 @@ def str2bool(st):
     
     
 def json2pandas(path2json_dir, verbose = True, trajs = False, fixed_iter = None):
-    '''read jsons files built with build_jsons and return them as a pandas dataframe for further exploration
+    ''' Read jsons files built with build_jsons and return them as a pandas dataframe for further exploration
     '''
     reg = re.compile('(\d\d*)\:(\d\d)\:(\d\d)')
     modelpath = os.listdir(path2json_dir)[0]
@@ -221,14 +223,14 @@ def json2pandas(path2json_dir, verbose = True, trajs = False, fixed_iter = None)
 # Plot functions
 
 def plot_traj(traj_list, alpha = 0.3, c = 'C0', label = ''):
-    ''' plot the training progression from a list of trajectories that can be extracted from yaset log files (just turn trajs = True in json2pandas)
+    ''' Plot the training progression from a list of trajectories that can be extracted from yaset log files (just turn trajs = True in json2pandas)
     '''
     for traj in traj_list:
         plt.plot(traj[0], traj[1], c = c, alpha = alpha, label = label)
     return
 
 def avg_traj(traj_list, plot = True, legend = '', fixed_iter = None):
-    ''' plot the average of a list of trajectories (same sthing as plot_traj but compress information by averaging)
+    ''' Plot the average of a list of trajectories (same sthing as plot_traj but compress information by averaging)
     '''
     max_len = np.max([le.shape[1] for le in traj_list])
     count = np.zeros(max_len) 
@@ -254,7 +256,6 @@ def plot_results(df,
                  get_results = False,
                  log_scale = False,
                  save = None):
-    # change this if other datasets!
     nb_tokens = max(df['nb_train_tokens'])
     ''' plot the curve of score progression against data size when nourished with pandas experiences results
     input:  df, the dataframe containing the results extracted from the jsons result summaries

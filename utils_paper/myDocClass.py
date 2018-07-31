@@ -1,6 +1,8 @@
 from spacy import displacy
 import re
 
+# Document level classes
+
 class entClass(object):
     ''' Entity class for myDoc classes, similarly to spacy, it contains the string, the offsets and the label for one entity
     '''
@@ -64,7 +66,7 @@ class mlt_doc(object):
        
         
 class mlt_multi_doc(mlt_doc):
-    '''doc class for merlot multi-labels, inherit from med_doc, the only method that changes create_ents
+    ''' doc class for merlot multi-labels, inherit from med_doc, the only method that changes create_ents
     '''
 
     def create_ents(self, entities):
@@ -141,7 +143,7 @@ class mlt_multi_doc(mlt_doc):
 
 
 class ncbi_doc(object):
-    ''' separate class for ncbi_doc, needs a slight pre-processing before applying the method, TODO: put this preprocessing in this class
+    ''' separated class for ncbi_doc, needs a slight pre-processing before applying the method
     '''
     def __init__(self, title, text, entities):
         txt_idx, title = title.split('|t|')
