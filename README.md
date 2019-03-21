@@ -1,6 +1,6 @@
 # Evaluation of YASET on various bio-medical datasets
 
-This repo describes the code and the processes used to evaluate [Yaset](http://yaset.readthedocs.io/en/stable/), a neural model for NER on differents datasets. These experiences and their interpretations are precisely discribed in the following paper, [Tourille et al., 2018]().
+This repo describes the code and the processes used to evaluate [Yaset](http://yaset.readthedocs.io/en/stable/), a neural model for NER on differents datasets. These experiences and their interpretations are precisely discribed in the following paper, [Tourille et al., 2018](http://www.aclweb.org/anthology/W18-5622).
 
 ## Corpora
 
@@ -27,3 +27,6 @@ Install the Python dependencies with :
 
 Install Yaset following [the instructions](http://yaset.readthedocs.io/en/stable/getting_started.html#installation)
 
+## Citation
+
+Tourille, Julien, Matthieu Doutreligne, Olivier Ferret, Aurélie Névéol, Nicolas Paris, et Xavier Tannier. « Evaluation of a Sequence Tagging Tool for Biomedical Texts ». Proceedings of the 9th International Workshop on Health Text Mining and Information Analysis (LOUHI 2018), 2018, pages 193–203.
